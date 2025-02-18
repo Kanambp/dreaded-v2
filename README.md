@@ -2,7 +2,7 @@
 
 <div align="center">
 
-| [![Fortunatus Mokaya](https://avatars.githubusercontent.com/u/106575586?v=4)](https://github.com/Kanambp)|
+| [![KANAMBO](https://avatars.githubusercontent.com/u/106575586?v=4)](https://github.com/Kanambp)|
 |----|
 
 
@@ -34,7 +34,7 @@
 
 <h2 align="center">   
 
-- ***You MUST `fork` this repo before fetching pairing code. Fork this repo by tapping  [`here`](https://github.com/Fortunatusmokaya/dreaded-v2/fork)***
+- ***You MUST `fork` this repo before fetching pairing code. Fork this repo by tapping  [`here`](https://github.com/Kanambp/dreaded-v2/fork)***
 
 
 ## Pairing:
@@ -52,7 +52,7 @@
    - ***[`CREATE HEROKU ACCOUNT`](https://signup.heroku.com/) `if you don't have one.`***
 
 
-- ***Now [`DEPLOY TO HEROKU`](https://dashboard.heroku.com/new?template=https://github.com/Fortunatusmokaya/dreaded-v2).***
+- ***Now [`DEPLOY TO HEROKU`](https://dashboard.heroku.com/new?template=https://github.com/Kanambp/dreaded-v2).***
 
 -***`Fill in all the required variables and deploy the bot.`***
 
@@ -102,9 +102,9 @@ Thanks to...
 
 <div align="center">
 
-| [![Fortunatus Mokaya](https://github.com/Fortunatusmokaya.png?lenght=50width=50)](https://github.com/Fortunatusmokaya)|
+|  [![KANAMBO](https://avatars.githubusercontent.com/u/106575586?v=4)](https://github.com/Kanambp)|
 |----|
-* [`Fortunatus mokaya`](https://github.com/Fortunatusmokaya) ***Author, Owner***
+* [`KANAMBO P`](https://github.com/Kanambp) ***Author, Owner***
 
 
 * [`Malik `](https://github.com/darkLo1rd) ***Debugging, random fixes and additions 🌱***
@@ -132,15 +132,15 @@ Thanks to...
   </a>
 
 
-Incase of any issues, contact me  [here](https://wa.me/+254114018035) via WhatsApp.
+Incase of any issues, contact me  [here](https://wa.me/+254114148625) via WhatsApp.
 
 Modifying the bot structure is at your own risk. We won't offer technical support if error occur.
 
 
 ## License
 
-[MIT License](https://github.com/Fortunatusmokaya/dreaded-v2/blob/main/LICENSE)
+[MIT License](https://github.com/Kanambp/dreaded-v2/blob/main/LICENSE)
 
-Copyright (c) 2024 DREADED-V2
+Copyright (c) 2025 KANAMBO V2
 
 
