@@ -114,12 +114,12 @@ m.reply = (text, chatId = m.chat, options = {}) => {
       text: text,
       contextInfo: {
         externalAdReply: {
-          title: `DREADED V2`,
+          title: `KANAMBO V2`,
           body: m.pushName,
           previewType: "PHOTO",
-          thumbnailUrl: 'https://telegra.ph/file/c75efecf7f0aef851fc02.jpg', 
+          thumbnailUrl: 'https://avatars.githubusercontent.com/u/106575586?v=4', 
           thumbnail: kali, 
-          sourceUrl: 'https://github.com/Fortunatusmokaya/dreaded-v2'
+          sourceUrl: 'https://github.com/Kanambp'
         }
       }
     }, 
