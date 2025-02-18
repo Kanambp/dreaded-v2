@@ -88,10 +88,10 @@ await client.sendMessage(m.chat, {
                         contextInfo: {
                             externalAdReply: {
                                 showAdAttribution: false,
-                                title: `DREADED V2`,
+                                title: `KANAMBO`,
                                 body: `Hi ${m.pushName}`,
                                 thumbnail: pict,
-                                sourceUrl: `https://github.com/Fortunatusmokaya/dreaded-v2`,
+                                sourceUrl: `https://github.com/Kanambp/dreaded-v2`,
                                 mediaType: 1,
                                 renderLargerThumbnail: true
                             }
