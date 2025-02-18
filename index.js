@@ -262,7 +262,7 @@ if(presence === 'online')
             return DateTime.now().setZone('Africa/Nairobi').toLocaleString(DateTime.TIME_SIMPLE);
         };
 
-        let message = `Holla, ${getGreeting()},\n\nYou are connected to dreaded bot. 📡 \n\n`;
+        let message = `Holla, ${getGreeting()},\n\nYou are connected to KANAMBO bot. 📡 \n\n`;
 
         message += `👤 𝑩𝑶𝑻𝑵𝑨𝑴𝑬:- ${botname}\n`;
 message += `🔓 𝑴𝑶𝑫𝑬:- ${mode}\n`;
