@@ -77,7 +77,7 @@ menuText += `🔓 𝑴𝑶𝑫𝑬:- ${mode}\n`;
             for (const file of commandFiles) {
                 const commandName = file.replace('.js', '');
                 const fancyCommandName = toFancyLowercaseFont(commandName);
-                menuText += `  • ${fancyCommandName}\n`;
+                menuText += `  💎 ${fancyCommandName}\n`;
             }
 
             menuText += '\n';
