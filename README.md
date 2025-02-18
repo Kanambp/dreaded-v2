@@ -1,4 +1,4 @@
- ***DREADED-V2***
+ ***KANAMBO V2***
 
 <div align="center">
 
