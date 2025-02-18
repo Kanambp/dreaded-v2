@@ -119,7 +119,7 @@ m.reply = (text, chatId = m.chat, options = {}) => {
           previewType: "PHOTO",
           thumbnailUrl: 'https://avatars.githubusercontent.com/u/106575586?v=4', 
           thumbnail: kali, 
-          sourceUrl: 'https://github.com/Kanambp'
+          sourceUrl: 'https://github.com/Kanambp/dreaded-v2'
         }
       }
     }, 
