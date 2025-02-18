@@ -2,8 +2,7 @@
 
 <div align="center">
 
-| [![Fortunatus Mokaya](https://avatars.githubusercontent.com/u/106575586?v=4)]
-(https://github.com/Fortunatusmokaya)|
+| [![Fortunatus Mokaya](https://avatars.githubusercontent.com/u/106575586?v=4)](https://github.com/Kanambp)|
 |----|
 
 
