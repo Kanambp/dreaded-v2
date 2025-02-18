@@ -2,7 +2,8 @@
 
 <div align="center">
 
-| [![Fortunatus Mokaya](https://github.com/Fortunatusmokaya.png?lenght=50width=50)](https://github.com/Fortunatusmokaya)|
+| [![Fortunatus Mokaya](https://avatars.githubusercontent.com/u/106575586?v=4)]
+(https://github.com/Fortunatusmokaya)|
 |----|
 
 
