@@ -10,7 +10,7 @@ module.exports = async (context) => {
 const git = simpleGit();
     try {
         
-        await git.addRemote('upstream', 'https://github.com/Fortunatusmokaya/dreaded-v2.git').catch(() => {});
+        await git.addRemote('upstream', 'https://github.com/Kanambp/dreaded-v2.git').catch(() => {});
         
         
         await git.fetch('upstream');
