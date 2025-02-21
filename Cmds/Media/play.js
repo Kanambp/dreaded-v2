@@ -1,46 +1,38 @@
-const yts = require("yt-search"); const ytdl = require("ytdl-core");
+const express = require("express");
+const ytdl = require("ytdl-core");
+const cors = require("cors");
+const ffmpeg = require("fluent-ffmpeg");
+const ffmpegPath = require("ffmpeg-static");
 
-module.exports = async (context) => { const { client, m, text } = context;
+const app = express();
+const PORT = process.env.PORT || 5000;
 
-try {
-    if (!text) return m.reply("What song do you want to download?");
+ffmpeg.setFfmpegPath(ffmpegPath);
+app.use(cors());
 
-    const { videos } = await yts(text);
-    if (!videos || videos.length === 0) {
-        return m.reply("No songs found!");
+app.get("/download", async (req, res) => {
+    const url = req.query.url;
+
+    if (!url || !ytdl.validateURL(url)) {
+        return res.status(400).json({ error: "Invalid YouTube URL" });
     }
-
-    const urlYt = videos[0].url;
 
     try {
-        const info = await ytdl.getInfo(urlYt);
-        const format = ytdl.chooseFormat(info.formats, { filter: "audioonly" });
-        
-        if (!format || !format.url) {
-            throw new Error("No suitable audio format found.");
-        }
+        const info = await ytdl.getInfo(url);
+        const title = info.videoDetails.title.replace(/[^\w\s]/gi, ""); // Clean filename
+        const stream = ytdl(url, { filter: "audioonly", quality: "highestaudio" });
 
-        const { title, author } = info.videoDetails;
-        
-        await m.reply(`_Downloading ${title} by ${author}_`);
+        res.setHeader("Content-Disposition", `attachment; filename="${title}.mp3"`);
+        res.setHeader("Content-Type", "audio/mpeg");
 
-        await client.sendMessage(
-            m.chat,
-            {
-                document: { url: format.url },
-                mimetype: "audio/mpeg",
-                fileName: `${title}.mp3`,
-            },
-            { quoted: m }
-        );
-    } catch (primaryError) {
-        console.error("Primary method failed:", primaryError.message);
-        m.reply("Download failed: Unable to retrieve audio.");
+        ffmpeg(stream)
+            .audioCodec("libmp3lame")
+            .toFormat("mp3")
+            .pipe(res, { end: true });
+    } catch (error) {
+        console.error("Error downloading:", error.message);
+        res.status(500).json({ error: "Failed to process the audio" });
     }
-} catch (error) {
-    m.reply("Download failed\n" + error.message);
-}
+});
 
-};
-
-            
+app.listen(PORT, () => console.log(`Server running on port ${PORT}`));
