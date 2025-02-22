@@ -5,7 +5,7 @@ module.exports = async (context) => {
         const { client, m, text, Owner } = context;
 
         if (!m.quoted && (!m.mentionedJid || m.mentionedJid.length === 0)) {
-            return m.reply("Tag or mention a user to unblock");
+            return m.reply("Tag or mention a user to block");
         }
         let users = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text.replace(/[^0-9]/g, '') + '@s.whatsapp.net';
 
