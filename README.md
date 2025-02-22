@@ -1,4 +1,4 @@
-
+no
  ***KANAMBO V2***
 
 <div align="center">
@@ -50,7 +50,7 @@
 
 -you can deploy your bot here 👇
 
-***[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=github://Kanambp/Kan-dreaded)***
+***[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=github://Kanambp/dreaded-v2)***
 
 
 -***`Fill in all the required variables and deploy the bot.`***
