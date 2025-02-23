@@ -1,4 +1,4 @@
-const ownerMiddleware = require('../../utility/botUtil/Ownermiddleware'); const fs = require('fs'); const path = require('path');
+const ownerMiddleware = require('../../utility/botUtil/Ownermiddleware'); const fs = require('fs'); const path = require('path'); const { exec } = require('child_process');
 
 module.exports = async (context) => { await ownerMiddleware(context, async () => { const { m, text, prefix } = context;
 
@@ -24,13 +24,12 @@ const [fileName, category, ...fileContentArr] = text.split('|').map(str => str.t
         
         fs.writeFileSync(filePath, fileContent, 'utf8');
         
-        // Ensure the file changes are committed to GitHub
-        const { exec } = require('child_process');
+        // Commit and push to GitHub
         exec(`git add ${filePath} && git commit -m "Added ${fileName}.js to ${category}" && git push`, (err, stdout, stderr) => {
             if (err) {
                 return m.reply(`✅ File saved, but GitHub update failed: ${stderr}`);
             }
-            m.reply(`✅ Command '${fileName}.js' successfully uploaded to '${category}' and pushed to GitHub!`);
+            m.reply(`✅ Command '${fileName}.js' successfully uploaded and pushed to GitHub! Changes will be applied automatically by the server.`);
         });
     } catch (error) {
         m.reply(`❌ Error writing file in '${category}': ${error.message}`);
