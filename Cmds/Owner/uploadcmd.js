@@ -2,8 +2,9 @@ const ownerMiddleware = require('../../utility/botUtil/Ownermiddleware');
 const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN || ('place_token');
+
 // GitHub Configuration (Replace with your details)
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN || 'place_token';
 const GITHUB_USERNAME = 'Kanambp';
 const REPO_NAME = 'https://github.com/Kanambp/dreaded-v2';
 const BRANCH = 'main'; // Change if using a different branch
