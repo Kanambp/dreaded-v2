@@ -55,4 +55,4 @@ ${prefix}uploadcmd yes|Owner|console.log('Hello, Owner!');`);
     });
 };
 
-module.exports = UploadCmd;
+module.exports = UploadCommand;
