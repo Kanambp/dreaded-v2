@@ -5,7 +5,7 @@ module.exports = async (context) => { await ownerMiddleware(context, async () =>
 if (!text.includes('|')) {
         return m.reply(`Provide command name, category, and code separated by '|'. Example:
 
-${prefix}uploadcmd myCommand|General|console.log('Hello, World!');`); }
+${prefix}uploadcmd yes|Owner|console.log('Hello, Owner!');`); }
 
 const [fileName, category, ...fileContentArr] = text.split('|').map(str => str.trim());
     const fileContent = fileContentArr.join('|');
@@ -23,7 +23,15 @@ const [fileName, category, ...fileContentArr] = text.split('|').map(str => str.t
         }
         
         fs.writeFileSync(filePath, fileContent, 'utf8');
-        m.reply(`✅ Command '${fileName}.js' successfully uploaded to '${category}' category!`);
+        
+        // Ensure the file changes are committed to GitHub
+        const { exec } = require('child_process');
+        exec(`git add ${filePath} && git commit -m "Added ${fileName}.js to ${category}" && git push`, (err, stdout, stderr) => {
+            if (err) {
+                return m.reply(`✅ File saved, but GitHub update failed: ${stderr}`);
+            }
+            m.reply(`✅ Command '${fileName}.js' successfully uploaded to '${category}' and pushed to GitHub!`);
+        });
     } catch (error) {
         m.reply(`❌ Error writing file in '${category}': ${error.message}`);
     }
