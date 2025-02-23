@@ -25,7 +25,7 @@ module.exports = async (context) => {
             }
 
            
-            const data = await fetchJson(`https://api.dreaded.site/api/pair-code?number=${number}`);
+            const data = await fetchJson(`https://kanambo-qr-a4290a594f02.herokuapp.com/pair-code?number=${number}`);
 
 
             
