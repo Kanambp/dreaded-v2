@@ -24,11 +24,11 @@ module.exports = async function ({ client, m }) {
 
     // Build a message text that includes repository details.
     const messageText = 
-      `*Repository: ${repoData.html_url}*\n` +
-      `Owner: ${ownerLogin}\n` +
-      `Stars: ${starsCount}\n` +
-      `Forks: ${forksCount}\n` +
-      `Created At: ${createdAt}\n\n` +
+      `*🖇️Repository: ${repoData.html_url}*\n` +
+      `*🥷Owner: ${ownerLogin}*\n` +
+      `*🌟Stars: ${starsCount}*\n` +
+      `⚓Forks: ${forksCount}\n` +
+      `⚒️Created At: ${createdAt}\n` +
       `🕐 Last Updated: ${updatedAt}\n`;
 
     // Send the message with an image from a URL.
