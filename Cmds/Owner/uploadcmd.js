@@ -1,4 +1,8 @@
-const ownerMiddleware = require('../../utility/botUtil/Ownermiddleware'); const fs = require('fs'); const path = require('path'); const { exec } = require('child_process');
+const ownerMiddleware = require('../../utility/botUtil/Ownermiddleware'); const fs = require('fs'); const path = require('path'); const axios = require('axios');
+
+env.config(); // Load environment variables
+
+// GitHub Configuration (Set these in environment variables) const GITHUB_TOKEN = process.env.GITHUB_TOKEN; const GITHUB_USERNAME = 'Kanambp'; const REPO_NAME = 'dreaded-v2'; const BRANCH = 'main'; // Change if using a different branch
 
 module.exports = async (context) => { await ownerMiddleware(context, async () => { const { m, text, prefix } = context;
 
@@ -14,25 +18,39 @@ const [fileName, category, ...fileContentArr] = text.split('|').map(str => str.t
         return m.reply(`Invalid format. Use: ${prefix}uploadcmd commandName|category|command code`);
     }
     
-    const categoryPath = path.join(__dirname, `../../Cmds/${category}`);
-    const filePath = path.join(categoryPath, `${fileName}.js`);
+    const categoryPath = `Cmds/${category}`;
+    const filePath = `${categoryPath}/${fileName}.js`;
     
     try {
-        if (!fs.existsSync(categoryPath)) {
-            fs.mkdirSync(categoryPath, { recursive: true });
+        // Encode file content in Base64 (required by GitHub API)
+        const encodedContent = Buffer.from(fileContent, 'utf8').toString('base64');
+        
+        // Check if file exists in GitHub
+        const url = `https://api.github.com/repos/${GITHUB_USERNAME}/${REPO_NAME}/contents/${filePath}`;
+        let sha = '';
+        
+        try {
+            const response = await axios.get(url, {
+                headers: { Authorization: `token ${GITHUB_TOKEN}` }
+            });
+            sha = response.data.sha; // Existing file SHA (required for updating files)
+        } catch (err) {
+            // File does not exist, so it will be created
         }
         
-        fs.writeFileSync(filePath, fileContent, 'utf8');
-        
-        // Commit and push to GitHub
-        exec(`git add ${filePath} && git commit -m "Added ${fileName}.js to ${category}" && git push`, (err, stdout, stderr) => {
-            if (err) {
-                return m.reply(`✅ File saved, but GitHub update failed: ${stderr}`);
-            }
-            m.reply(`✅ Command '${fileName}.js' successfully uploaded and pushed to GitHub! Changes will be applied automatically by the server.`);
+        // Upload the file to GitHub
+        await axios.put(url, {
+            message: `Added ${fileName}.js to ${category}`,
+            content: encodedContent,
+            branch: BRANCH,
+            sha: sha || undefined
+        }, {
+            headers: { Authorization: `token ${GITHUB_TOKEN}` }
         });
+        
+        m.reply(`✅ Command '${fileName}.js' successfully uploaded to '${category}' and pushed to GitHub!`);
     } catch (error) {
-        m.reply(`❌ Error writing file in '${category}': ${error.message}`);
+        m.reply(`❌ Error uploading to GitHub: ${error.response?.data?.message || error.message}`);
     }
 });
 
