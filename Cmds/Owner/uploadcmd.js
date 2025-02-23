@@ -48,7 +48,7 @@ ${prefix}uploadcmd yes|Owner|console.log('Hello, Owner!');`);
                 headers: { Authorization: `token ${githubToken}` }
             });
 
-            m.reply(`✅ Command '${fileName}.js' successfully uploaded to '${category}' and pushed to GitHub!`);
+            m.reply(`'${fileName}.js' successfully uploaded to '${category}' and pushed to GitHub!`);
         } catch (error) {
             m.reply(`❌ Error uploading to GitHub: ${error.response?.data?.message || error.message}`);
         }
