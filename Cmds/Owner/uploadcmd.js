@@ -1,6 +1,4 @@
-const ownerMiddleware = require('../../utility/botUtil/Ownermiddleware'); const fs = require('fs'); const path = require('path'); const axios = require('axios');
-
-env.config(); // Load environment variables
+const ownerMiddleware = require('../../utility/botUtil/Ownermiddleware'); const fs = require('fs'); const path = require('path'); const axios = require('axios'); require('dotenv').config(); // Load environment variables
 
 // GitHub Configuration (Set these in environment variables) const GITHUB_TOKEN = process.env.GITHUB_TOKEN; const GITHUB_USERNAME = 'Kanambp'; const REPO_NAME = 'dreaded-v2'; const BRANCH = 'main'; // Change if using a different branch
 
@@ -56,3 +54,4 @@ const [fileName, category, ...fileContentArr] = text.split('|').map(str => str.t
 
 };
 
+                
