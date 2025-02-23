@@ -1,6 +1,6 @@
 {
   "name": "KAN-DREADED",
-  "description": "This is a simple whatsapp bot built with nodejs and baileys with MD support.",
+  "description": "This is a simple WhatsApp bot built with Node.js and Baileys with MD support.",
   "keywords": [
     "bot",
     "whatsapp",
@@ -20,85 +20,46 @@
   "success_url": "/",
   "env": {
     "PREFIX": {
-      "description": "choose your prefix for dreaded. To prevent errors and confusion you must set a prefix",
+      "description": "Choose your prefix for DREADED. To prevent errors and confusion, you must set a prefix.",
       "value": ".",
       "required": true
     },
     "DEV": {
-      "description": "Put any phone numbers you want to be bot owner without + or spaces \",\" Ex: 254114018035, 254741889898 ",
+      "description": "Put any phone numbers you want to be bot owner without + or spaces, separated by commas (e.g., 254114018035,254114148625).",
       "required": false
     },
     "CODE": {
-      "description": "Enter your country code without +. Example: 254 for Kenya. This will allow bot to detect and remove foreigners if commanded",
+      "description": "Enter your country code without +. Example: 254 for Kenya. This allows the bot to detect and remove foreigners if commanded.",
       "required": true
-    },
-    "STICKER_AUTHOR": {
-      "description": "Put your sticker author data",
-      "required": false
-    },
-    "STICKER_PACKNAME": {
-      "description": "Put your sticker packname data",
-      "required": false
     },
     "BOTNAME": {
-      "description": "Enter name for your bot.",
+      "description": "Enter the name for your bot.",
+      "required": false
+      },
+    "ANTILINK": {
+      "description": "Enter true if you want to activate antilink where the bot kicks all link senders in your group of false/leave blank to deactivate.",
       "required": false
     },
-    "GC_PRESENCE": {
-      "description": "Type true if you want bot to show fake recording/typing in group chats.",
-      "required": false
-    },
-    "SESSION": {
-      "description": "Paste the session id that you received in whatsapp after linking the bot. It's used for authentication.",
-      "required": true
-    },
-    "AUTOVIEW_STATUS": {
-      "description": "Type true if you want bot to automatically read all status update",
-      "required": false
-    },
-
- "AUTOLIKE_STATUS": {
-      "description": "Type true if you want bot to automatically like status updates, this will only work if AUTOVIEW_STATUS is true.",
-      "required": false
-    },
-
- "ANTIDELETE": {
-      "description": "Type true if you want bot to automatically forward deleted messages in groups. The deleted messages will be forwarded to the <message yourself chat>. We are yet to implement antidelete for private chats.",
-      "required": false
-    },
- "ANTILINK": {
-      "description": "Type true if you want bot to automatically forward deleted messages in groups. The deleted messages will be forwarded to the <message yourself chat>. We are yet to implement antidelete for private chats.",
-      "required": false
-    },
-"EVENTS": {
-      "description": "choose whether to allow bot to detect events in groups such as promote, demote, remove and add. If set to true bot will send welcome/goodbye messages and signal when somebody is promoted or demoted.",
+    "EVENTS": {
+      "description": "Choose whether to allow the bot to detect events in groups such as promote, demote, remove, and add. If set to true, the bot will send welcome/goodbye messages and signal when someone is promoted or demoted.",
       "value": "true",
       "required": true
     },
-"AUTOBIO": {
-      "description": "Type true if you want bot to autoupdate it's bio constantly",
-      "required": false
+    "GITHUB_TOKEN": {
+      "description": "Enter your GitHub Personal Access Token (PAT) to allow the bot to upload command files.",
+      "required": true
     },
-
-"ANTITAG": {
-      "description": "Type true if you want bot to automatically remove members who tagall or use hidetag.",
-      "required": false
+    "GITHUB_USERNAME": {
+      "description": "Enter your GitHub username.",
+      "required": true
     },
-"ANTIVIEWONCE": {
-      "description": "Type true if you want bot to automatically read viewonce media",
-      "required": false
+    "REPO_NAME": {
+      "description": "Enter the name of your GitHub repository.",
+      "required": true
     },
-    "AUTOREAD": {
-      "description": "Put here true if you want bot to automatically bluetick messages in private.",
-      "required": false
-    },
-    "WA_PRESENCE": {
-      "description": "This is your WhatsApp Presence Status: Here's how to set it up: Type *typing* if you want bot to show typing..., Type *recording* if you want bot to show recording..., Type *online* if you want bot to be always online, Leave this field blank if you want bot to show your actual presence.",
-      "value": "typing",
-      "required": false
-    },
-    "MODE": {
-      "description": "Type private if you don't want other people to use the bot or public if you want everyone to access.",
+    "BRANCH": {
+      "description": "Enter the branch name where command files will be uploaded. Default is 'main'.",
+      "value": "main",
       "required": false
     }
   },
