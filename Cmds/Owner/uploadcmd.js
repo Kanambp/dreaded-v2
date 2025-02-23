@@ -3,10 +3,10 @@ const fs = require('fs');
 const path = require('path');
 const axios = require('axios');
 
-// GitHub Configuration (Replace with your details)
-const GITHUB_TOKEN = process.env.GITHUB_TOKEN || 'place_token';
-const GITHUB_USERNAME = 'Kanambp';
-const REPO_NAME = 'https://github.com/Kanambp/dreaded-v2';
+// GitHub Configuration (Using environment variables for security)
+const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
+const GITHUB_USERNAME = process.env.GITHUB_USERNAME;
+const REPO_NAME = process.env.REPO_NAME;
 const BRANCH = 'main'; // Change if using a different branch
 
 module.exports = async (context) => {
@@ -61,4 +61,3 @@ ${prefix}uploadcmd yes|Owner|console.log('Hello, Owner!');`);
         }
     });
 };
-    
