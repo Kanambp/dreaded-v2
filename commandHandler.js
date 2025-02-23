@@ -30,13 +30,9 @@ const { commandFiles, totalCommands } = findAllCommandFiles(cmdsDir);
 const commands = {}; const aliases = { speed: "ping", kick: "remove", mute: "close", unmute: "open", latency: "ping", runtime: "uptime", admin: "oadmin", groups: "botgc", bc: "broadcast", pp: "fullpp",
 kickall: "kill", kickall2: "kill2", exec: "shell", leave: "leavegc", left: "leavegc", join: "joingc", gh: "github", ss: "screenshot", ssweb: "ssweb", help: "menu", commands: "menu", list: "menu", repo: "script", sc: "script", linkgc: "link", gclink: "link", grouplink: "link", linkgroup: "link", mention: "tagall", vv: "retrieve", reset: "revoke", mute: "close", app: "apk", fb: "fbdl", facebook: "fbdl", url: "upload", tourl: "upload", yta: "ytmp3", ytv: "ytmp4", mf: "mediafire", emojimix: "emix",
 enc: "encrypt", req: "requests", approve: "approve-all", reject: "reject-all",
-up: "uptime", uploadcmd: "uploadcmd" // Added uploadcmd alias };
+up: "uptime" };
 
-commandFiles.forEach((file) => { const commandName = path.basename(file, '.js'); const commandModule = require(file);
-
-commands[commandName] = commandModule;
-
-});
+commandFiles.forEach((file) => { try { const commandName = path.basename(file, '.js'); const commandModule = require(file); commands[commandName] = commandModule; } catch (error) { console.error(Error loading command ${file}:, error); } });
 
 module.exports = { commands, aliases, totalCommands };
 
