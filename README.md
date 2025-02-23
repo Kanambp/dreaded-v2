@@ -49,7 +49,7 @@
 
 -you can deploy your bot here 👇
 
-***[![Deploy](https://www.rendercdn.com/deploy/button.svg)](https://dashboard.render.com/new?template=https://github.com/Kanambp/dreaded-v2)***
+***[![Deploy](https://www.om/deploy/button.svg)]()***
 
 
 -***`Fill in all the required variables and deploy the bot.`***
