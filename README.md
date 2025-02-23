@@ -49,7 +49,7 @@
 
 -you can deploy your bot here 👇
 
-***[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://dashboard.heroku.com/new?template=https://github.com/Kanambp/dreaded-v2)***
+***[![Deploy](https://www.rendercdn.com/deploy/button.svg)](https://dashboard.render.com/new?template=https://github.com/Kanambp/dreaded-v2)***
 
 
 -***`Fill in all the required variables and deploy the bot.`***
