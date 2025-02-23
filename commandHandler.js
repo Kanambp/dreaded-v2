@@ -78,7 +78,7 @@ req: "requests",
 approve: "approve-all",
 reject: "reject-all",
 up: "uptime",
-upcmd: "uploadcmd"
+uploadcmd: "uploadcmd"
 };
 
 commandFiles.forEach((file) => {
